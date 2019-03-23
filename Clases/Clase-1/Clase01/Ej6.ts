@@ -19,6 +19,9 @@ var numero :number =5;
 console.log(Cubo(numero));
 //console.log(Cubo(2));
 
+
+
+
 //fat arrow
 var numero2 = (i:number)=>{return Math.pow(i,3)};
 
