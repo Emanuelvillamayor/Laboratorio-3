@@ -5,6 +5,7 @@ Nota : La función retornará el cubo del parámetro ingresado. Realizar una fun
 invoque a esta última y permita mostrar por consola el resultado.
 */
 
+//funcion de cubo
 function Cubo(num : number) : number
 {
     //v1
@@ -13,11 +14,21 @@ function Cubo(num : number) : number
     //return num*num*num;
 }
 
+//funcion que muestre cubo
+function Mostrar(num : number):void
+{
+    console.log(Cubo(num));
+}
+
 
 var numero :number =5;
 
+//muestro solo con la funcion "Cubo"
 console.log(Cubo(numero));
-//console.log(Cubo(2));
+
+//muestro utilizando la funcion Mostrar
+Mostrar(numero);
+
 
 
 
