@@ -1,3 +1,4 @@
+"use strict";
 /*Ejercicio 10:
 Definir una función que muestre información sobre una cadena de texto que se le pasa
 como argumento. A partir de la cadena que se le pasa, la función determina si esa cadena
@@ -26,3 +27,4 @@ ValidarCadena(cadena2);
 console.log("Pruebo con una cadena en MAYUSCULA y minuscula:\n");
 ValidarCadena(cadena3);
 console.log();
+//# sourceMappingURL=Ej10.js.map

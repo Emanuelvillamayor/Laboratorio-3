@@ -8,13 +8,13 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/Ej10.js"
+            "program": "${workspaceFolder}/Ej12.js"
         },
         {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/Ej10.ts",
+            "program": "${workspaceFolder}/Ej12.ts",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
