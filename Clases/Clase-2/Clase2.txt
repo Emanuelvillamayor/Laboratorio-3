@@ -1,0 +1,54 @@
+Ejercicio 12 :
+1- Es el <table>
+2-De acuerdo a la estructura de la tabla , ya se cuantas FILAS Y COLUMNAS VA A TENER MI TABLA
+  *Columnas:3
+  *Filas:13  (cuento siempre de la que esta mas DIVIDIDA) ->voy a tener 13 <tr> y la cant de columnas
+   siempre me tiene que dar 3 columnas
+   
+   1º <tr> : va a tener que tener adentro 3 <td>
+   2º <tr> : va a tener que tener adentro 3 <td>
+   3º <tr> : va a tener que tener adentro 3 <td> -> esta columna esta colocada hacia abajo por lo cual mi primer
+      columna tiene que tener un "rowspan" para qe colapse hacia abajo en este caso debe ser de 6 para colapsar hacia abajo
+      dependiendo de cantidad de filas (river hasta peñarol) y va a decir "river".
+      En la segunda columna , un Roswpan = "3" , va a decir ARGENTINA
+      La ultima columna no va a tener Rowspan , solo texto
+   4° <tr> : va a tener que tener adentro 1 <td> porque de la primer y segunda columna ya van a estar ocupadas por
+             lo anterior solo voy a tener qe dibujar un unico <td> mas los otros rowspan que suman 3 , "boca"
+   5° <tr> : igual que la anterior y voy a dibujar un unico <td> y se tiene que sumar a los otro dos que vienen de arriba
+   6° <tr> : va a pasar lo mismo pero de la segunda fila a se corta lo de argentina por lo cual dibujo 2 <td> mas uno 
+             que viene de arriba y va a tener un rowspan de 2 y el texto va a ser "Brasil" y la otra columna "Santos"
+   7°<tr> : uno que viene de conmebol , otro de brasil y solo voy a tener que dibujar un unico <td> sumando los dos anteriores
+   8°<tr> : tiene que tener dos <td> para dibujar el de uruguay y el de Peñarol 
+   9°<tr> : va a tener 3 <td> uno para uefa , otro para españa y otro para r madrid
+           el primero de los <td> tiene que estar colapsado para abajo debe ser de rowspan= 5 (el mio + 4 mas<9
+   10°<tr>:  solo dibujo un <td> que es el de barcelona
+   11°<tr>: dibujo el <td> de inglaterra con rowspan de 3 y el otro de m united sin rowspan
+   12º<tr>:un unico <td> con liverpool
+   13º <tr>: un unico <td> con arsenal
+
+
+href(atributo de link) agregar la direccion de las paginas de uefa y conmebol , encerrarlos entre <a>
+
+*************************************************************************
+ Por cada fila determinar la cantidad de columnas y la cantidad de rowspan 
+**************************************************************************
+
+Vamos a encerrar a toda la tabla dentro de un div para que lo podamos alinear al centro y asi nuestra tabla quede alineada al centro
+Para eso utilizamos el atriubto aligne = center -> y lo que va a hacer va a alineaer todo el contenido de div en este caso el contenido va aser
+la tabla
+
+
+Ejercicio 21 -> funcion void recibo valores , casteo a tipo input , no le pongo parametros
+
+Dentro del html voy a tener :
+3 tipo text
+4 tipo radio button
+1 tipo button 
+
+Para los "radiobutton" puedo repetir el atributo name , el atirbuto id deberia ser unico en todo el documento
+-Debo levantar todos los atirbutos de tipo checkbox y hago:
+  document.GetElementsByName  -> va aprovocar que se arme una busca en el documento cuyo atributo name sea 
+  el que yo le pase entre parentesis y comillas y nos va a retornar un array con cada uno de esos elementos
+  a partir de ese array por cada elemento a partir del checked , si es true paso ese , si es false no lo paso
+  si lo hubiera hecho con GetElementById -> siempre hubiera encontrado solo el primer elemento
+
