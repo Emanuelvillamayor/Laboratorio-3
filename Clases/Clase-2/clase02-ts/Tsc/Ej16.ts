@@ -4,7 +4,7 @@ DNI (documento nacional de identidad) y finalmente su currículum vitae (este ú
 hacerlo utilizando un <TEXTAREA>). Al pulsar el botón btnAceptar , por medio de una
 función en TypeScript, mostrar todos sus datos por consola.
 */
-function MostrarResultados()
+function MostrarResultados():void
 {
     let nombre : string = (<HTMLInputElement> document.getElementById("nombre")).value;
     
