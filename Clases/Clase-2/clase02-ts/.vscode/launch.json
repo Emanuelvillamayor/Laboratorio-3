@@ -14,7 +14,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\Tsc\\Ej21.ts",
+            "program": "${workspaceFolder}\\Tsc\\Ej21.js",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]

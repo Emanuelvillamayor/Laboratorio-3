@@ -1,0 +1,45 @@
+<!--Ejercicio 16:
+Confeccionar un formulario que permita ingresar el nombre de una persona, su mail, su
+DNI (documento nacional de identidad) y finalmente su currículum vitae (este último dato
+hacerlo utilizando un <TEXTAREA>). Al pulsar el botón btnAceptar , por medio de una
+función en TypeScript, mostrar todos sus datos por consola.
+-->
+<!doctype html\>
+<html lang="en">
+  <head>
+    <title>Ejercicio 16</title>
+
+    <script src="C:\Users\User\Desktop\Manu\Laboratorio-3\Clases\Clase-2\clase02-ts\Tsc\Ej16.js" ></script>
+  </head>
+  <body class=" container">
+
+    <form>
+        <!--Con esto al clickear ensima de la frase "Ingrese su nombre" , recibe el focus hacia la casilla de texto-->
+        <label for="nombre">Ingrese su nombre:</label>
+        <!--Creamos la casilla de texto , el placeholder sirve para que dentro de la casilla escribamos una referencia y si la borramos vuelva esa referencia a escribirse-->
+        <input type="text" name="nombre" placeholder="Escriba su nombre" id="nombre" maxlength="40">
+        <hr/>   
+
+        <label for="email">Ingrese su email:</label>
+        <!--Creamos casilla de texto para email , si no ponemos un "@" al escrbir en la pagina nos dara error-->
+        <input type="email" name="email" placeholder="Ingrese su email" id="email">
+        <hr/>   
+
+        <label for="dni">Ingrese su Numero de Documento:</label>
+        <!--Creamos casilla de texto para n° de Documento , y podemos valdiarlo para que tenga 8 digitos en total-->
+        <input type="number" name="dni" min="11111111" max="99999999" step="1" id="dni">
+        <hr/> 
+ 
+        <label for="curriculum">Ingresa tu curriculum vitae:</label>
+        <textarea name="curriculum" id="curriculum" placeholder="Ingresa tu curriculum vitae" cols="30" rows="10"></textarea>
+        <br><br>
+
+        <input type="button" onclick="MostrarResultados()" value="Calcular" name="btnAceptar"/> 
+
+
+  
+    
+             
+    </form>
+
+  </body>

@@ -8,12 +8,48 @@ usuario eligió. Utilizar la estructura ‘switch’
 
 function ResultadoOperacion():void
 {
-    let valor1 : string = (<HTMLInputElement> document.getElementById("txtValor1")).value;
-    let valor2 : string = (<HTMLInputElement> document.getElementById("txtValor2")).value;
- 
-   // let rdButton : NodeListOf(HTMLElement) =  document.getElementsByName("txtValor2");
+    //obtengo los valores de los cuadros de texto
+    let valorString1 : string = (<HTMLInputElement> document.getElementById("txtValor1")).value;
+    let valorInt1 :number = parseInt(valorString1);
 
-    //let opcion : string[]=(<> document.getElementsByName("txtValor2")).value;
+    let valorString2 : string = (<HTMLInputElement> document.getElementById("txtValor2")).value;
+    let valorInt2 :number = parseInt(valorString2);
+ 
+    //obtengo en un array
+    
+    let rdButton :NodeListOf<HTMLElement>=  document.getElementsByName("rdoTipo");
+
+    let resultado:number=0;
+    let signo : string="-";
+
+    for(let i=0;i<rdButton.length;i++)
+    { 
+      if(rdButton[i])
+      {
+      }
+    }
+   
+   switch (signo) {
+       case "+":
+           resultado = valorInt1+valorInt2;
+           break;
+        case "-":
+           resultado = valorInt1-valorInt2;
+           break;
+
+        case "*":
+           resultado = valorInt1*valorInt2;
+           break; 
+
+         case "/": 
+           resultado = valorInt1/valorInt2;
+           break;
+
+       default:
+           break;
+   }
+
+   alert("El resultado de su Operacion es : " + resultado);
     
     
 

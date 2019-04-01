@@ -7,9 +7,35 @@ resultado (en la consola y en otro cuadro de texto), de acuerdo al tipo de opera
 usuario eligió. Utilizar la estructura ‘switch’
 */
 function ResultadoOperacion() {
-    var valor1 = document.getElementById("txtValor1").value;
-    var valor2 = document.getElementById("txtValor2").value;
-    // let rdButton : NodeListOf(HTMLElement) =  document.getElementsByName("txtValor2");
-    //let opcion : string[]=(<> document.getElementsByName("txtValor2")).value;
+    //obtengo los valores de los cuadros de texto
+    var valorString1 = document.getElementById("txtValor1").value;
+    var valorInt1 = parseInt(valorString1);
+    var valorString2 = document.getElementById("txtValor2").value;
+    var valorInt2 = parseInt(valorString2);
+    //obtengo en un array
+    var rdButton = document.getElementsByName("rdoTipo");
+    var resultado = 0;
+    var signo = "-";
+    for (var i = 0; i < rdButton.length; i++) {
+        if (rdButton[i]) {
+        }
+    }
+    switch (signo) {
+        case "+":
+            resultado = valorInt1 + valorInt2;
+            break;
+        case "-":
+            resultado = valorInt1 - valorInt2;
+            break;
+        case "*":
+            resultado = valorInt1 * valorInt2;
+            break;
+        case "/":
+            resultado = valorInt1 / valorInt2;
+            break;
+        default:
+            break;
+    }
+    alert("El resultado de su Operacion es : " + resultado);
 }
 //# sourceMappingURL=Ej21.js.map
