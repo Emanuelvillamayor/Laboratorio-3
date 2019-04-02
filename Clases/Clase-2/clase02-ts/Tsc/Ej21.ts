@@ -16,16 +16,19 @@ function ResultadoOperacion():void
     let valorInt2 :number = parseInt(valorString2);
  
     //obtengo en un array
-    
-    let rdButton :NodeListOf<HTMLElement>=  document.getElementsByName("rdoTipo");
+    let rdButton :any=  document.getElementsByName("rdoTipo");
 
     let resultado:number=0;
     let signo : string="-";
 
+    //recorro para encontrar de todos los RADIO BUTTON , EL QUE FUE SELECCIONADO , ESO LO SE CON EL ATRIBUTO "CHECKED"
     for(let i=0;i<rdButton.length;i++)
     { 
-      if(rdButton[i])
+      if(rdButton[i].checked==true)
       {
+        //OBTENGO EL VALOR DE ESE ATRIBUTO
+        signo=rdButton[i].value;
+        break;
       }
     }
    

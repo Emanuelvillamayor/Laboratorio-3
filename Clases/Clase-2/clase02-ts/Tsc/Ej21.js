@@ -16,8 +16,12 @@ function ResultadoOperacion() {
     var rdButton = document.getElementsByName("rdoTipo");
     var resultado = 0;
     var signo = "-";
+    //recorro para encontrar de todos los RADIO BUTTON , EL QUE FUE SELECCIONADO , ESO LO SE CON EL ATRIBUTO "CHECKED"
     for (var i = 0; i < rdButton.length; i++) {
-        if (rdButton[i]) {
+        if (rdButton[i].checked == true) {
+            //OBTENGO EL VALOR DE ESE ATRIBUTO
+            signo = rdButton[i].value;
+            break;
         }
     }
     switch (signo) {
