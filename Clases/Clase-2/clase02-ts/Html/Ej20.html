@@ -1,0 +1,26 @@
+<!--Ejercicio 20:
+Confeccionar un formulario que muestre un control de cada tipo y los muestre todos
+deshabilitados. (Cuando conozca JavaScript podemos habilitarlos por ejemplo si el visitante
+ingresa una clave correcta, por ahora vea como queda visualmente el formulario con los
+controles deshabilitados)
+-->
+
+<!doctype html\>
+<html lang="en">
+  <head>
+    <title>Ejercicio 20</title>
+
+    <script src="C:\Users\User\Desktop\Manu\Laboratorio-3\Clases\Clase-2\clase02-ts\Ej20.js" ></script>
+  </head>
+  <body class ="containter">
+      <form>
+          <!--onkeyup -> se ejecuta la funcion cuando se suelta cualquier tecla-->
+          Ingrese password para habilitar los controles (forma1):<input type="password" name="passw" id="passw" onkeyup="HabilitarControles()"><br>
+          Boton:<input type="button" value="presioname" name="button" id="button" disabled>
+          Text:<input type="text" placeholder="Ingresa datos" name="txtNombre" id="txtNombre" disabled><br>
+          Radiobuttons:<br><input type ="radio" value="Bueno" name="rdb" id="rdb"><br>
+          <input type ="radio" value="Malo" name="rdb" id="rdb">
+
+
+      </form>
+  </body>

@@ -1,0 +1,28 @@
+<!--Ejercicio 19 :
+Confeccionar un formulario que muestre en un comboBox (SELECT) una serie de mails.
+Luego permitir que el visitante seleccione uno o varios mails del cuadro de selección.
+-->
+<!doctype html\>
+<html lang="en">
+  <head>
+    <title>Ejercicio 19</title>
+
+    <script src="C:\Users\User\Desktop\Manu\Laboratorio-3\Clases\Clase-2\clase02-ts\Ej19.js" ></script>
+  </head>
+  <body class="container">
+      <form>
+          <!--El onchage me permite que cuando cambie de opcion en el combo box llame a esa funcion-->
+          <select id="chbx" name="chbx" onchange="MostrarSeleccionado()">
+              <option id="manu" value="1">manuvillamayor3@hotmail.com</option>
+              <option id="monica" value="2">monicaacha@hotmail.com</option>
+              <option id="marcos" value="3">marcosvillalva@hotmail.com</option>
+          </select>
+
+          <!--
+              Se podia haber realizado esta opcion oara qye cuando de click en el button me muestre cual es el seleccionado en el combo box
+              <input type="button" value="Enviar"  onclick="">
+          -->
+        
+
+      </form>
+  </body>

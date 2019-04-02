@@ -1,0 +1,29 @@
+<!--Ejercicio 18:
+Confeccionar un formulario que solicite el ingreso del nombre de una persona y permita
+votar el sitio. Mediante un control de tipo radio, el visitante puede elegir entre las siguientes
+opciones: Excelente, Muy Bueno, Bueno, Regular y Malo. Al pulsar el botón, mostrar la
+opción elegida por consola
+-->
+<!doctype html\>
+<html lang="en">
+  <head>
+    <title>Ejercicio 18</title>
+
+    <script src="C:\Users\User\Desktop\Manu\Laboratorio-3\Clases\Clase-2\clase02-ts\Ej18.js"></script>
+  </head>
+  <body class=" container">
+      <form>
+        Ingrese su nombre:<input type="text" name="txtNombre" id="txtNombre"  maxlength="20" placeholder="Ingrese su nombre"><br>
+
+        Vote el sitio:<br>
+
+        Malo<input type="radio" name="rdb" value="Malo" >
+        Regular<input type="radio" name="rdb" value="Regular" >
+        Bueno<input type="radio" name="rdb" value="Bueno" >
+        Muy Bueno<input type="radio" name="rdb" value="Muy Bueno" >
+        Excelente<input type="radio" name="rdb" value="Excelente" >
+        
+        <input type="button" name="btnEnviar" value="Enviar" onclick="MostrarResultado()"> 
+
+      </form>
+  </body>    
