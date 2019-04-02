@@ -1,0 +1,33 @@
+<!--Ejercicio 25:
+Agregarle al ejercicio anterior un mensaje, en color rojo (#ff0000), en aquellos campos
+que no sean válidos.
+-->
+
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 24</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="C:\Users\User\Desktop\Manu\Laboratorio-3\Clases\Clase-2\clase02-ts\Ej25.js"></script>
+</head>
+<body class="container">
+    <form>
+        Ingrese nombre: <input type="text" name="txtNombre" id="txtNombre" placeholder="Ingrese nombre..." maxlength="30"><br>
+        Ingrese apellido: <input type="text" name="txtApellido" id="txtApellido" placeholder="Ingrese Apellido..." maxlength="30"><br>
+
+        <!--Otra forma de validar es con min y max:
+            <input type="number" name = "numDni" id="numDni" min=11111111 max=999999999>
+        -->
+        Ingrese DNI: <input type="number" name = "numDni" id="numDni"><br>
+
+        Seleccione sexo:<br>Masculino<input type="checkbox" name="chxMasculino" id="chxMasculino" value="Masculino"checked><br>
+        Femenino<input type="checkbox" name="chxFemenino" id="chxFemenino" value ="Femenino"checked><br>
+        <input type="button" id="btnValidar" value ="Enviar"onclick="ValidarDatos2()">
+
+
+    </form>
+    
+</body>
+</html>

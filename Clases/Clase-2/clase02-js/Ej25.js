@@ -1,8 +1,8 @@
-/*Ejercicio 24:
-Realizar una página que permita el ingreso de: Apellido, Nombre, Dni y sexo de una
-persona. Si el usuario pulsa el botón de confirmación se invocará a una función encargada de
-validar cada uno de los datos ingresados (que tanto el nombre y apellido no estén vacíos,
-que el documento sea numérico y que el sexo sea o ‘m’ o ‘f’)
+/*
+<!--Ejercicio 25:
+Agregarle al ejercicio anterior un mensaje, en color rojo (#ff0000), en aquellos campos
+que no sean válidos.
+-->
 */
 
 function ValidarDatos1()
@@ -24,7 +24,10 @@ function ValidarDatos1()
     }
     else
     {
-        nombre.placeholder="ERROR";
+        //'<div style="color :#'.$this->Get_Color().'">'
+       // nombre.placeholder="ERROR";
+       nombre.value="ERROR!";
+       nombre.style.color="red";
         cadena+="Nombre: "+"Error!"+"\n";
     }
 
@@ -34,7 +37,8 @@ function ValidarDatos1()
     }
     else
     {
-        apellido.placeholder="ERROR";
+        apellido.value="ERROR";
+        apellido.style.color="red";
         cadena+="Apellido: "+"Error!"+"\n";
     }
 
@@ -45,6 +49,7 @@ function ValidarDatos1()
     }
     else
     {
+        dni.value.style="red";
         cadena+="DNI:Error\n";
     }
 

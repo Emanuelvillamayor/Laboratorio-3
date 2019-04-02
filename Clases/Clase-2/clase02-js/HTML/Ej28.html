@@ -1,0 +1,24 @@
+<!--Ejercicio 28:
+Realizar una página parecida a la del ejercicio anterior que permita crear una tabla. Para
+ello se ingresarán la cantidad de filas y de columnas y al pulsar el botón se creará la tabla en
+el elemento div . Ayuda: se deben agregar las filas al elemento tbody y este último al
+elemento table 
+-->
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 27 -JAVASCRIPT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="C:\Users\User\Desktop\Manu\Laboratorio-3\Clases\Clase-2\clase02-js\Ej28.js"></script>
+</head>
+<body>
+    Ingrese cantidad de filas:<input type ="number" id="numFilas" name="numFilas" min="1" max ="10"><br>
+    Ingrese cantidad de columnas:<input type ="number" id="numColumnas" name="numColumnas" min="1" max ="10"><br>
+    <input type="button" value="Enviar" id="btnEnviar" onclick="CrearTabla(numFilas.value,numColumnas.value)">
+    <div id="div">
+
+    </div>
+
+</body>

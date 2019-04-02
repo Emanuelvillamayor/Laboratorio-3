@@ -1,0 +1,32 @@
+<!--Ejercicio 26:
+Realizar una página HTML que contenga un cuadro de texto, un botón y una lista
+desordenada con los siguientes elementos:
+a. Programación I
+b. Programación II
+c. Programación III
+Se pide crear una función TypeScript que permita añadir nuevos elementos a la lista cada
+vez que se pulsa sobre el botón. Utilizar las funciones DOM para crear nuevos nodos y
+añadirlos a la lista existente. La función recibirá como únicos parámetros la cadena que
+tendrá el elemento nuevo de la lista y el nombre de la lista desordenada.
+-->
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 24</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="C:\Users\User\Desktop\Manu\Laboratorio-3\Clases\Clase-2\clase02-ts\Tsc\Ej26.js"></script>
+</head>
+<body class="container">
+    Ingrese nueva materia <input type ="text" id="txtMateria" name="txtMateria" placeholder="Ingrese materia..." maxlength="30"><br>
+    <input type="button" onclick="TypeScript(txtMateria.value,lista.id)" name="btn" id="btn" value="Enviar"><br>
+    Lista de materias:<br>
+    <ul name="lista" id="lista">
+        <li>Programacion I</li>
+        <li>Programacion II</li>
+        <li>Programacion III</li>
+    </ul>
+
+
+</body>    
