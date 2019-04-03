@@ -5,7 +5,7 @@ el elemento div . Ayuda: se deben agregar las filas al elemento tbody y este úl
 elemento table 
 */
 
-function CrearTabla(filas,columnas)
+function CrearTabla(filas:string,columnas:string)
 {
     /*Esquema
     <table>
@@ -25,12 +25,12 @@ tabla.setAttribute("border","1");
 var tbody = document.createElement("tbody");
 
 //1-recorremos por cant de filas
-for(i=0;i<parseInt(filas);i++)
+for(var i=0;i<parseInt(filas);i++)
 {
     //2-creamos filas
     var fila = document.createElement("tr");
     //3-recorremos por cantidad de columnas
-    for(j=0;j<columnas;j++)
+    for(var j=0;j<parseInt(columnas);j++)
     {
         //4-creamos columna
         var columna=document.createElement("td");
@@ -49,6 +49,11 @@ for(i=0;i<parseInt(filas);i++)
 tabla.appendChild(tbody);
 
 //9-asignamos la tabla a el "div"
-document.getElementById("div").appendChild(tabla);
+const part=document.getElementById("div");
+if(part)
+{
+ part.appendChild(tabla);
+}
+
 
 }
