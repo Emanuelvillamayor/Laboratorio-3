@@ -1,0 +1,31 @@
+Ejercicio 3:
+Un archivo por clase  el main donde vamos a testear en otro archivo distinto, hay que agregar referencias
+a los archivos y en el main el outfile.
+3 archivos:persona,empleado y main , usamos namespace (Empleados)
+
+En una clase persona , con atributos privados , constructor todos los datos , get y set para TODOS los elemtnso
+Un metodo Hablar (abstracto) y el ToStrign() va a devolver nombre , apellido ,etc.
+Clase Empleado que herede de persona , implementa metod abstracto y reutiliza ToString()
+
+Vamos a agregar un index .html: vamos a diseñar pantalla de ingreso con tantos campos necesarios para crear un
+nuevo empleado , todo dentro de un form , alineado con un div , un boton de sumbit y otro de reset
+Cuando hago click en aceptar <input type "button" onclick-> llamamos a funcion
+que recupera todos los valores de los distintos elementos(id) , genero objeto de tipo empleado
+y hago console.log(de ese empleado.ToString)
+
+Al formulario pasarle un action de una pagina php se va a llamar administracion.php
+y lo que haga sea un var_dump del $POST para comprobar si podemos guardar en typescript tambien en php se puede.
+
+Typescript:
+Recupero el form con un "id" + el action + el metodo
+form
+let frm document.getElementbyId ->casteo a <htmlFormElement> nos devuelve objeto de tipo form
+lo que me interesa es solo un metodo=frm.submit() lo que hace es enviar el contenido de formulario
+como el input de enviar es de tipo "button" no hace nada es decir no tiene la funcion de "submit"
+ahora con esa funcion despues del console.log() envio el submit del form a un archivo de tipo php 
+
+Despues voy a todos los datos que recupero en php los pueda guardar en un archivo de texto 
+y en la pagina colocar un a etiqueta que nos lleve devuelta < a href="index.html">volver</a>
+
+
+

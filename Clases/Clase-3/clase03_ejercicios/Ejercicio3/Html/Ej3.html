@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>source="../Clases/script.js"</script>
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <form>
+        <table border="1">
+            <tr>
+                <td>Nombre</td>
+                <td ><input type="text" id="txtNombre" name="txtNombre" placeholder="ingrese nombre..."> </td>              
+            </tr>
+            <tr>
+                <td>Apellido</td>
+                <td><input type="text" id="txtApellido" name="txtApellido" placeholder="ingrese apellido..."></td>
+            </tr>
+            <tr>
+                <td>Dni</td>
+                <td><input type="number" id="numDni" name="numDni" min="11111111" max="99999999"></td>
+            </tr>
+            <tr>
+                <td>Sexo</td>
+                <td><input type="text" id="txtSexo" name="txtSexo" placeholder="Ingrese Sexo"></td>
+            </tr>
+            <tr>
+                <td>Legajo</td>
+                <td><input type="number" id="numLeg" name="numLeg" ></td>
+            </tr>
+            <tr>
+                <td>Saldo</td>
+                <td><input type="number" id="numSal" name="numSal" ></td>
+            </tr>
+        </table><br>
+
+        <input type="button" id="btnAceptar" onclick="CrearObjetoEmpleado()" value="Aceptar">
+        <!--El tipo reset si esta dentro de un form borra el contenido de los demas inputs-->
+        <input type ="reset" id="btnCancelar" value="Cancelar">
+
+    </form>
+    
+</body>
+</html>
