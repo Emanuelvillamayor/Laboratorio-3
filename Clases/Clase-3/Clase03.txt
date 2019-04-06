@@ -24,8 +24,12 @@ lo que me interesa es solo un metodo=frm.submit() lo que hace es enviar el conte
 como el input de enviar es de tipo "button" no hace nada es decir no tiene la funcion de "submit"
 ahora con esa funcion despues del console.log() envio el submit del form a un archivo de tipo php 
 
+PHP:
 Despues voy a todos los datos que recupero en php los pueda guardar en un archivo de texto 
 y en la pagina colocar un a etiqueta que nos lleve devuelta < a href="index.html">volver</a>
+**El problema es que para poder ejecutar lo de php vamos a tener que guardar los archivos dentro de un htdocs
+y activar el xampp**
+
 
 
 

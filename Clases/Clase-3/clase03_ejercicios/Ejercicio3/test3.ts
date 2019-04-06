@@ -14,6 +14,3 @@ var empleado=new  Empleados.Empleado("emanuel","villamayor",42395106,"M",107435,
 
 console.log(empleado.ToString());
 console.log(empleado.Hablar("español"));
-
-
-

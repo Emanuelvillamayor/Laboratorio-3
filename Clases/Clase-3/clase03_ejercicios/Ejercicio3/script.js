@@ -1,7 +1,10 @@
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -114,12 +117,9 @@ var Empleados;
     }(Empleados.Persona));
     Empleados.Empleado = Empleado;
 })(Empleados || (Empleados = {}));
-/*
-Creo funcion para poder instanciar objeto con los datos recibidos por la tabla en html y mostrarlo
-con el ToString() de Empleado y mostrarlo
-*/
-///<reference path="Empleado.ts"/>
-function CrearObjetoEmpleado() {
+///<reference path="Clases/Empleado.ts"/>
+function CrearObjeto() {
+    //recupero los datos en variables
     var nombre = document.getElementById("txtNombre").value;
     var apellido = document.getElementById("txtApellido").value;
     var dniString = document.getElementById("numDni").value;
@@ -129,6 +129,15 @@ function CrearObjetoEmpleado() {
     var legajoNum = parseInt(legajoString);
     var saldoString = document.getElementById("numSal").value;
     var saldoNum = parseInt(saldoString);
-    var Empleado = new Empleados.Empleado(nombre, apellido, dniNum, sexo, legajoNum, saldoNum);
-    console.log(Empleado.ToString());
+    var empleado = new Empleados.Empleado(nombre, apellido, dniNum, sexo, legajoNum, saldoNum);
+    //muestro el empleado con los datos cargados por la pagina por consola
+    console.log(empleado.ToString());
+    //obtengo el formulario como variable (objeto de tipo form)
+    var frm = document.getElementById("frm");
+    /*
+    metodo=frm.submit() lo que hace es enviar el contenido de formulario
+    como el input de enviar es de tipo "button" no hace nada es decir no tiene la funcion de "submit"
+    ahora con esa funcion despues del console.log() envio el submit del form a un archivo de tipo php
+    */
+    frm.submit();
 }

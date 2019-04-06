@@ -8,13 +8,16 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/Ejercicio3/Ej3_html.js"
+            "program": "${workspaceFolder}/Ejercicio3/script.js"
         },
         {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${file}"
+            "program": "${workspaceFolder}\\Ejercicio3\\test3.ts",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
         }
     ]
 }

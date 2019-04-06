@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script>source="../Clases/script.js"</script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Ejercicio 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script.js"></script>
+    
 </head>
-<body>
-    <form>
+<body class="container">
+    <form id="frm" action="../PHP/administracion.php" method="POST">
         <table border="1">
             <tr>
                 <td>Nombre</td>
@@ -36,7 +37,7 @@
             </tr>
         </table><br>
 
-        <input type="button" id="btnAceptar" onclick="CrearObjetoEmpleado()" value="Aceptar">
+        <input type="button" id="btnAceptar" onclick="CrearObjeto()" value="Aceptar">
         <!--El tipo reset si esta dentro de un form borra el contenido de los demas inputs-->
         <input type ="reset" id="btnCancelar" value="Cancelar">
 
