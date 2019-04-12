@@ -1,0 +1,40 @@
+*****************************************************CLASE 4********************************
+
+Creamos un "index.html" que contenga lo siguiente:
+
+ -No tengo FORM(ya que esto hace un envio de la pagina completa pero yo no quiero actualizar toda la pagina)
+ -Input de tipo text para escribir nombre 
+ -input de tipo button (no submit) ,hago referencia a funcion "Saludar()"
+ -<div id="div_mostrar"></div>     -> aqui dentro vamos a colocar las respuestas que hacemos en nuestro backend
+
+Creamos un "administrar.php" que va a ser nuestro Archivo dentro del servidor web
+al cual le vamos a hacer las peticiones:
+ 
+
+Generar dentro de un documento typescript, lo vamos a llamar "manejadora.ts" :
+ -namespace = "AJAX"
+  -export Funcion-> Saludar():void (no recibe nada ni devuelve nada) 
+    -Genero instancia de XMLHttpRequest , la instancia , donde va a ir y le paso true para que sea asincronica
+    
+    Voy a hacer de las tres formas , alert , consola y div , todos los inputos tiene .value pero los elementos
+    en los cuales su contenido se guarda entre etiquetas (div) , lo guardo dentro de sus etiquetas , no puedo accederlo
+    con value pero si con "innerHtml" 
+
+   -export Funcion->Ingresar():void
+    Voy a tener que de acuerdo a una accion determinada va a ser distintas cosas el mismo administrar.php,
+   Desde php: Si la accion es 1: muestro el nombre pasado por parametro , 1-> indica accion y otra nombre pasado por parametro
+    y lo muestro por consola 
+    Si la accion es 2 : guardo el nombre en un archivo de texto , uno abajo del otro
+    Si la accion es 3: retorna el "Listado de nombres" , es decir una tabla como titulo nombres y debajo 
+    Dentro del requestext , lo recupero en el typescript , si pasa eso llamo a otra funcion que va a ser Mostrar()
+    la funcion va a llaamr al mismo administrar.php case3, 
+    Creamos la funcion Verificar(nombre):bool  indica si el nombre es valido o no , lo que ba a ser , va a llamar
+    a la accion 4 de administrar.php y va a recibir el nombre y buscar ese nombre dentro del archivo de texto ,
+    si el nombre esta retorno true o 1 y typescript me devuelve true , la idea seria que cuando haga click en enviar
+    antes de invocar al caso2 , invoque primeramente al verificar me da true no lo agrego , si me da false lo agrego
+    Es decir la funcion Verificar() va a llamar al case 4 y pasar el nombre par acomprobar si esta repetido o no
+    esa funcion Verificar() la voy a invocar dentro de la funcion Ingresar() antes de hacer el httx.send()ya que
+    al hacer el send , se envia al case 2 y no se validaria
+    
+     
+
