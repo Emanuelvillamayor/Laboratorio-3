@@ -25,7 +25,8 @@ namespace Figuras2
         public Dibujar(): string 
         {
              //var retorno :string='<div style="color :#'+this.GetColor +'">';//pongo los colores hexadecimal      
-               var retorno:string ='<div style="color :'+ this.GetColor +'">'; //pongo los colores ingles 
+              // var retorno:string ='<div style="color :'+ this.GetColor +'">'; //pongo los colores ingles 
+              var retorno:string="";
             
                 for(let i=0;i<this._ladoUno;i++)
                 {
@@ -33,7 +34,8 @@ namespace Figuras2
                     {
                         retorno+= "*";
                     }
-                    retorno+="<br>";
+                   // retorno+="<br>";
+                   retorno+="\n";
                 }
             
             return retorno;
@@ -47,7 +49,7 @@ namespace Figuras2
 
         public ToString()
         {
-            return super.ToString() +`<br>Perimetro:${this._perimetro}<br>Superficie:${this._superficie}<br>Dibujo:${this.Dibujar()}`;
+            return super.ToString() +`\nDibujo:\n\n${this.Dibujar()}`;
         }
 
     }

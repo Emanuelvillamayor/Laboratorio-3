@@ -44,7 +44,8 @@ namespace Figuras2
         //Metodo Virtual
         public ToString():string
         {
-            return `Color:${this._color}<br>Perimetro:${this._perimetro}<br>Superficie:${this._superficie}`;
+          //  return `Color:${this._color}<br>Perimetro:${this._perimetro}<br>Superficie:${this._superficie}`;
+          return `Color:${this._color}\nPerimetro:${this._perimetro}\nSuperficie:${this._superficie}`;
         }
 
         //Metodos Abstractos
