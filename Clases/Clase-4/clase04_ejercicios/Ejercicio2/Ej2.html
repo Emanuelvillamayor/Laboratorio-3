@@ -1,0 +1,24 @@
+<!---Ejercicio 2 (mostrar contenido de archivo):
+Generar una aplicación Web, que permita al usuario ingresar el path de un archivo de texto. Al
+pulsar un botón, y utilizando el objeto XMLHttpRequest , mostrar el contenido del archivo en
+un <div>. En caso de que el archivo no exista, mostrar un mensaje de error por alert() 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src=Ej2.js ></script>
+    <title>Ejercicio 2</title>
+</head>
+<body>
+
+    Ingrese un path :<input type="text" placeholder="Ingrese path..." name="txtPath" id="txtPath"><br>
+    <input type="button" value="Enviar" onclick="IngresarPath()"><br>
+
+    <div id="div"></div>
+
+    
+</body>
+</html>

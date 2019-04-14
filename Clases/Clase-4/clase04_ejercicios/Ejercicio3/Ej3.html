@@ -1,0 +1,29 @@
+<!---Ejercicio 3 (determinar si una palabra existe):
+A partir del ejercicio anterior, agregarle un <input type=”text”> que le permita al usuario
+ingresar un palabra. Por medio del el objeto XMLHttpRequest , buscar el archivo, y al
+encontrarlo, buscar dentro del archivo si existe la palabra que ingreso el usuario dentro del
+mismo.
+Indicar, por medio de mensajes:
+ Si el archivo existe o no.
+ Si la palabra existe o no.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src=Ej3.js ></script>
+    <title>Ejercicio 3</title>
+</head>
+<body>
+
+    Ingrese un path :<input type="text" placeholder="Ingrese path..." name="txtPath" id="txtPath"><br>
+    Ingrese una palabra<input type="text" placeholder="Ingrese palabra.." name="txtPalabra" id="txtPalabra"><br>
+    <input type="button" value="Enviar" onclick="IngresarPath2()"><br>
+
+    <div id="div"></div>
+
+    
+</body>
+</html>

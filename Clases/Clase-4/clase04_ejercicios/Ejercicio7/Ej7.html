@@ -1,0 +1,30 @@
+<!---Ejercicio 7 (Sugerir nombres de usuario):
+Normalmente, cuando se valida la disponibilidad de un nombre de usuario, se muestra una lista
+de valores alternativos en el caso de que el nombre elegido no esté disponible. Modificar el
+ejercicio anterior para que permita mostrar una serie de valores alternativos devueltos por el
+servidor.
+Si el nombre de usuario está ocupado, los nombres de usuario alternativos se deben mostrar
+en forma de lista de elementos (<ul></ul>). Para ello generar un archivo de texto con varios
+nombres.
+Modificar la lista anterior para que muestre enlaces (<a>) para cada uno de los nombres
+alternativos. Al pinchar sobre el enlace de un nombre alternativo, se copia en el cuadro de
+texto del login del usuario.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src=Ej7.js ></script>
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    Ingrese nombre: <input type="text" id="txtName" name ="txtName" placeholder="Ingrese nombre.."><br>
+    <input type="button" value="Verificar" onclick="SugerirNombre()">
+    <div id=div_lista></div>
+    
+
+    
+</body>
+</html>
