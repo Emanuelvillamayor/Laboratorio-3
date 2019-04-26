@@ -1,0 +1,9 @@
+                              CLASE 5
+
+hacer el primer ejercicio de la guia y nos permite ir a una pagina web
+que le pasamos un string y nos devuelve si es un objeto json valido o no
+http://jsonviewer.stack.hu/
+
+4-Enviar objeto jason a un php y desde php lo pueda recuperar y retornar var_dump
+de lo recuperado, para el envio debemos hacerlo en formato cadena y tiene que tener clave
+asociada , lo envio por ajax con post o get y recibo en php
