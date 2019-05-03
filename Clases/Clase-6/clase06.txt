@@ -1,0 +1,22 @@
+                                                   CLASE 6
+Ejercicio hace algunas clases de clase empleado con los campos nombre , apellido , legajo , foto ,sueldo
+Vamos a ver como subir por AJAXla foto de un empleado
+Agregamos un case mas quesea mostrarListado() y nos retorne un listado de todos los empleados que tengo
+en una tabla. Del lado del cliente tomo el responseText y lo muestro en un div.Ese listado lo vamos a poner como inicio
+de nuestro pagina y a medidad que vamos agregando empleado nuevo se refresca esa tabla , llamamos aal window.onload()
+
+Le agregamos una columna mas que sea una columna de acciones, en principo le ponemos una "x" o texto "eliminar"
+y la idea seria poder eliminar cualquiera de esos elementos una vez que veo el listado.
+Lo que vamos a tener en el button va a ser un input , en el onclick() voy a tener que llamar a mi funcion para
+que me elimine a mi objeto seleccionado Eliminar() le vamos a pasar como parametro todo el objeto que quiero eliminar de tipo Empleado
+cuando vaya a dibujar la tabla tengo que una vez que recupero nombre legajo y foto , genero input mas y pasarle el resultante de 
+JSON encode del objeto de tipo Empleado {nombre=juan,legajo=101,foto=ola.jpg},entonces cuando lo recupero desde tpescript es decir cuando hago
+click en el boton eliminar va a recibir como parametro un objeto y desde mi objeto voy a modificarlo desde typescript.
+
+El modificar le paso el objto completo ed tipo JSON en vez de preguntar desde typescript , lo que hago es recibir el obj y volcar los valores mas la
+foto ,y el tema es que hacer cuando hago click en modificar
+
+
+Al ejemplo ademas de la foto podemos agregarle legajo y nombre y hacer esa peticion por ajax no solo de la opcion
+sino de la foto , del legajo y del nombre ,
+

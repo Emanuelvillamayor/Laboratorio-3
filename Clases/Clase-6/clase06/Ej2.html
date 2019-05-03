@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="empleado.js"></script>
+</head>
+<body >
+    
+    <!--enctype debe ser de tipo "multipart/formdata"-->
+    <form method="post" action="admin.php" enctype="multipart/form-data">
+        Ingrese nombre:<input type ="name"  id="txtNombre"name="txtNombre" placeholder="Ingrese nombre..."><br>
+        Ingrese apellido:<input type ="name" id="txtApellido" name="txtApellido" placeholder="Ingrese apellido..."><br>
+        Ingrese Legajo:<input type="number" id="numLegajo" name="numLegajo" placeholder="Ingrese legajo..."><br>
+        Ingrese sueldo:<input type="number" id="numSueldo" name="numSueldo" placeholder="Ingrese sueldo..."><br>
+
+       
+
+        <!--Input -> de tipo "file"  -->
+        Ingrese archivo:<input type="file" name="fileFoto" id="fileFoto"><br>
+        
+        <input type="button" value="Enviar" onclick="SubirFoto()"><br>
+
+        <br><br><br>
+        <img id="imgFoto" src="./usr_default.jpg" width="250px" height="250px" />
+
+    </form>
+    <div id="div"></div>
+
+    
+</body>
+</html>
