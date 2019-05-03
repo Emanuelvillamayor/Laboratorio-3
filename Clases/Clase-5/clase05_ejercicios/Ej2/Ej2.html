@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 2</title>
+    <script type="text/javascript">
+
+  // var productos =' [{ "" : , "nombre" : "ema", "precio" : 27 },{ "codigoBarra" : 4578, "nombre" : "lucas", "precio" : 12 },{ "codigoBarra" : 0000, "nombre" : "pepe", "precio" : 12  }] ';
+var productos = '[{"codigoBarra":13232,"nombre":"ema","precio":"417799"},{"codigoBarra":0000,"nombre":"lucas","precio":"417799"}]';
+
+var obj = JSON.parse(productos);
+
+   console.log(obj[1].nombre);
+   console.log(obj[1].codigoBarra);
+   console.log(obj[1].precio);
+
+   console.log("\n");
+
+/*
+alert(obj[0].nombre);
+alert(obj[0].codigoBarra);
+alert(obj[0].precio);
+
+*/
+
+
+    
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>
