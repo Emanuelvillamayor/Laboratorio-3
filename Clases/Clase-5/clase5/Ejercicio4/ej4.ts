@@ -9,9 +9,11 @@ namespace CLASE4
 {
 export function EnviarJSON():void
 {
+  //creo array de tipo JSON
     let productos:any =[{"codigoBarra":13232,"nombre":"ema","precio":27.22},
                       {"codigoBarra":201,"nombre":"lucas","precio":3.1}];
 
+    //convierto ese array de tipo JSON  a string utilizando la funcion "stringify"
     let params : string = "misProductos=" + JSON.stringify(productos);
 
     let xhttp:XMLHttpRequest= new XMLHttpRequest();
@@ -31,6 +33,7 @@ export function EnviarJSON():void
           alert(xhttp.responseText);
           console.log(xhttp.responseText);
           */
+         // con la funcion "parse" transformo un "string" de tipo JSON  a un "objet"o de tipo JSON
          let obj  = JSON.parse(xhttp.responseText);
          alert(obj.Id);
 

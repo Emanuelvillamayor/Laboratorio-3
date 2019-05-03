@@ -9,8 +9,10 @@ namespace CLASE
 {
 export function EnviarJSON():void
 {
+    //guardo un objeto de tipo JSON
     let producto:any ={"codigoBarra":12323,"nombre":"ema","precio":22.5};
 
+    //convierto ese objeto de tipo JSON a string con la funcion "stringify"
     let params : string = "miProducto=" + JSON.stringify(producto);
 
     let xhttp:XMLHttpRequest= new XMLHttpRequest();
@@ -20,6 +22,7 @@ export function EnviarJSON():void
     xhttp.setRequestHeader("content-type","application/x-www-form-urlencoded");
 
 
+    //envio el objeto JSON en formato string a php
     xhttp.send(params);
 
     xhttp.onreadystatechange=()=>{

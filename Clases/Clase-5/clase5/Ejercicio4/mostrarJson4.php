@@ -49,7 +49,7 @@ echo json_encode($autos);
 
 
 //EJEMPLO de city.list.min.json
-/*
+
 $a = fopen("./archivos/city.list.min.json","r");
 
 $arrayObj=array();
@@ -65,11 +65,12 @@ while(!feof($a))
 fclose($a);
 
 echo json_encode($arrayObj);
-*/
+
 
 
 //EJEMPLO de remeras.json
 
+/*
 $a = fopen("./archivos/remeras.json","r");
 
 $contenido =fread($a,filesize("./archivos/remeras.json"));
@@ -78,6 +79,19 @@ fclose($a);
 $remeras = json_decode($contenido);
 
 echo json_encode($remeras);
+*/
+
+//EJMPLO de paises.json
+/*
+$a = fopen("./archivos/paises.json","r");
+
+$contenido =fread($a,filesize("./archivos/paises.json"));
+fclose($a);
+
+$paises = json_decode($contenido);
+
+echo json_encode($paises);
+*/
 
 
 
