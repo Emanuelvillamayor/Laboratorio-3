@@ -89,3 +89,15 @@ function Eliminar(empleado) {
     }
     MostrarListado();
 }
+function Modificar(empleado) {
+    var objEmp = JSON.parse(empleado);
+    document.getElementById("txtNombre").value = objEmp.nombre;
+    document.getElementById("txtApellido").value = objEmp.apellido;
+    document.getElementById("numLegajo").value = objEmp.legajo;
+    document.getElementById("numSueldo").value = objEmp.sueldo;
+    //direccion de donde se encuentra la foto
+    var path = "./BACKEND/" + objEmp.path_foto;
+    //hay que cambiar el "src" para que sepa donde buscar la foto 
+    document.getElementById("imgFoto").src = path;
+    MostrarListado();
+}

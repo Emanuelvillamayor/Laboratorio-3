@@ -50,7 +50,7 @@
             $ultimo = explode("\r\n",$divido[4]);
 
             //$empleado=new Empleado($divido[0],$divido[1],$divido[2],$divido[3],$divido[4]);
-            $empleado=new Empleado($divido[0],$divido[1],$divido[2],$divido[3],trim($ultimo[0]));
+            $empleado=new Empleado($divido[1],$divido[2],$divido[0],$divido[3],trim($ultimo[0]));
 
             array_push($retorno,$empleado);
         }

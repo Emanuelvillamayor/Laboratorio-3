@@ -132,3 +132,24 @@ function Eliminar(empleado:any)
    }
    MostrarListado();
 }
+
+function Modificar(empleado:any)
+{
+   let objEmp :any = JSON.parse(empleado);
+
+
+  (<HTMLInputElement> document.getElementById("txtNombre")).value=objEmp.nombre;
+  (<HTMLInputElement> document.getElementById("txtApellido")).value=objEmp.apellido;
+  (<HTMLInputElement> document.getElementById("numLegajo")).value=objEmp.legajo;
+  (<HTMLInputElement> document.getElementById("numSueldo")).value=objEmp.sueldo;
+
+  //direccion de donde se encuentra la foto
+  let path :string="./BACKEND/"+objEmp.path_foto;
+  //hay que cambiar el "src" para que sepa donde buscar la foto 
+  (<HTMLImageElement> document.getElementById("imgFoto")).src = path;
+
+
+
+
+   MostrarListado();
+}

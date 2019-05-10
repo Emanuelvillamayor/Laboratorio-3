@@ -41,7 +41,7 @@ require_once "AccesoDatos.php";
         
         while($fila = $consulta->fetch())
         {
-          $empleado= new Empleado($fila[1],$fila[2],$fila[3],$fila[4],$fila[5]);
+          $empleado= new Empleado($fila[1],$fila[3],$fila[2],$fila[4],$fila[5]);
           array_push($empleados,$empleado);
         }
 

@@ -97,6 +97,10 @@ switch ($op) {
             //a el objeto que se encuentra en esa tabla lo enviamos por json a typescript para dar la opcion de eliminarlo
             $tabla.= "<td><input type='button' onclick='Eliminar(".json_encode($cadenaEmpleado).")' value='Eliminar'</td>";
 
+
+            $tabla.= "<td><input type='button' onclick='Modificar(".json_encode($cadenaEmpleado).")' value='Modificar'</td>";
+
+
             $tabla.= "</tr>";
             
         }
