@@ -1,0 +1,20 @@
+                                              CLASE 7
+Seguimos con el ejercicio de el empleado:
+
+MODIFICAR:
+
+Desde typescript al obtener el input de legajo lo voy a mostrar y lo voy 
+a poner en disable = true para que no se pueda modificar 
+
+type=hidden value = Agregar
+
+JQUERY:
+Vamos a hacer un "hola mundo" Para eso lo que vamos a intentar hacer es lo siguiente
+1-Debemos generar un package.json  =  npm init 
+  Lo hacemos en el raiz de nuestro projecto , haciendo eso me va a pedir que complete con algunos datos  , autor , mail , etc 
+
+2-instalar @types/query  = npm install --save @types/query 
+  si no ponga path me lo instala en el node_modules y alli dentro tenemos el index.d.ts
+
+
+Con esto ya podria trabajar con JQUERY del lado de typescript
