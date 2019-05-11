@@ -27,6 +27,7 @@ function SubirFoto() {
     var sueldo = document.getElementById("numSueldo").value;
     //INSTANCIO OBJETO FORMDATA
     var form = new FormData();
+    var op = "";
     //AGREGO PARAMETROS AL FORMDATA:
     //PARAMETRO RECUPERADO POR $_FILES
     form.append('foto', foto.files[0]);
@@ -35,16 +36,35 @@ function SubirFoto() {
     form.append('numLegajo', legajo);
     form.append('numSueldo', sueldo);
     //PARAMETRO RECUPERADO POR $_POST O $_GET (SEGUN CORRESPONDA)
-    form.append('op', "subirFoto");
+    //form.append('op', "subirFoto");
     //METODO; URL; ASINCRONICO?
     xhr.open('POST', './BACKEND/nexo.php', true);
     //ESTABLEZCO EL ENCABEZADO DE LA PETICION
     xhr.setRequestHeader("enctype", "multipart/form-data");
+    //valido la opcion de si el boton es modificar o si es agregar
+    //Esta es una forma de hacerlo
+    //if((<HTMLInputElement> document.getElementById("btn")).value == "Modificar")
+    //Esta es otra forma de hacerlo
+    if (localStorage.getItem("modificar") == "true") {
+        op = "modificarFoto";
+    }
+    else {
+        op = "subirFoto";
+    }
+    console.log(op);
+    form.append('op', op);
     //ENVIO DE LA PETICION
     xhr.send(form);
     //FUNCION CALLBACK
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
+            //vuelvo a cambiar el input a enviar en vez de modificar
+            document.getElementById("btn").value = "Enviar";
+            document.getElementById("btn").className = "btn btn-success";
+            //funcion que me limpia los campos una vez subida un empleado o modificado
+            LimpiarCampos();
+            //limpio el localStorage
+            localStorage.clear();
             //recupero el objeto de tipo JSON en formato cadena que nos devuelve nexo.php
             var retJSON = JSON.parse(xhr.responseText);
             //si el atributo "Ok" es falso , mostramos que la foto no se subio
@@ -101,5 +121,17 @@ function Modificar(empleado) {
     var path = "./BACKEND/" + objEmp.path_foto;
     //hay que cambiar el "src" para que sepa donde buscar la foto 
     document.getElementById("imgFoto").src = path;
+    document.getElementById("btn").value = "Modificar";
+    //(<HTMLInputElement> document.getElementById("btn")).className="btn btn-warning";
+    localStorage.setItem("modificar", "true");
     MostrarListado();
+}
+function LimpiarCampos() {
+    document.getElementById("txtNombre").value = "";
+    document.getElementById("txtApellido").value = "";
+    document.getElementById("numSueldo").value = "";
+    document.getElementById("fileFoto").value = "";
+    document.getElementById("numLegajo").value = "";
+    document.getElementById("numLegajo").disabled = false;
+    document.getElementById("imgFoto").src = "./BACKEND/usr_default.jpg";
 }

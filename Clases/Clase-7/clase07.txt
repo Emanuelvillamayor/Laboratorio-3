@@ -12,9 +12,15 @@ JQUERY:
 Vamos a hacer un "hola mundo" Para eso lo que vamos a intentar hacer es lo siguiente
 1-Debemos generar un package.json  =  npm init 
   Lo hacemos en el raiz de nuestro projecto , haciendo eso me va a pedir que complete con algunos datos  , autor , mail , etc 
+  el mas importante a completar es el de version , yo utilizo version 3.2.0 
 
-2-instalar @types/query  = npm install --save @types/query 
+2-instalar @types/query  = npm install --save @types/jquery 
   si no ponga path me lo instala en el node_modules y alli dentro tenemos el index.d.ts
 
+3-Desde el lado de typescript es decir donde esta mi archivo ".ts" voy a agregar la referencia del index.d.ts
 
-Con esto ya podria trabajar con JQUERY del lado de typescript
+    /// <reference path="./node_modules/@types/jquery/index.d.ts"/>
+
+4-Desde el lado de HTML voy a tener que agregar un "script" antes que los demas "scripts" de las clases el cual este lo voy a
+  tener que buscar en "CDN-JQUERY" , buscar la version que tengo (en mi caso 3.2.0) y luego elegir la version mas completa ya que da a elegir
+  entre "uncompressed  , minified , slim , slim minified"  , utilizar la uncompressed que es la mas completa

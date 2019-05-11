@@ -138,6 +138,46 @@ switch ($op) {
 
        break;
 
+       case 'modificarFoto':
+
+        $objRetorno= new stdClass();
+    
+        $objRetorno->Ok= false;
+        
+        $extension=pathinfo($_FILES["foto"]["name"],PATHINFO_EXTENSION);
+        
+        //voy a obtener el dato de destino de imagen
+        $destino ="fotos_empleados/" .$_POST["numLegajo"] ."_" . $_POST["txtApellido"] . "." .$extension;
+        
+        $empleado = new Empleado($_POST["numLegajo"],$_POST["txtApellido"],$_POST["txtNombre"],$_POST["numSueldo"],$destino);
+    
+        //elimino la foto anterior de este empleado
+        Empleado::EliminarFoto($empleado);
+        //modifico los datos del empleado
+        
+        if(Empleado::ModificarArchivo($empleado))
+        {
+            //muevo la nueva foto a destino 
+            if(move_uploaded_file($_FILES["foto"]["tmp_name"],$destino))
+           {
+             $objRetorno->Ok=true;
+             $objRetorno->Path=$destino;
+             $objRetorno->nombre=$_POST["txtNombre"];
+             $objRetorno->apellido=$_POST["txtApellido"];
+             $objRetorno->legajo=$_POST["numLegajo"];
+             $objRetorno->sueldo=$_POST["numSueldo"];
+           }
+           //retorno un objeto de tipo JSON en formato cadena para que puede recibirse desde el lado de typescript
+          echo json_encode($objRetorno);
+    
+        }
+    
+    
+        //agrego la foto del empleado a la carpeta de foto_empleados
+        
+        break;
+    
+
     default:
         echo ":(";
         break;

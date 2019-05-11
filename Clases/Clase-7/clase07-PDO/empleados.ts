@@ -47,6 +47,8 @@ function SubirFoto() : void {
     //INSTANCIO OBJETO FORMDATA
     let form : FormData = new FormData();
 
+    let op:string="";
+
     //AGREGO PARAMETROS AL FORMDATA:
 
     //PARAMETRO RECUPERADO POR $_FILES
@@ -57,13 +59,33 @@ function SubirFoto() : void {
     form.append('numSueldo',sueldo);
 
     //PARAMETRO RECUPERADO POR $_POST O $_GET (SEGUN CORRESPONDA)
-    form.append('op', "subirFoto");
+    //form.append('op', "subirFoto");
 
     //METODO; URL; ASINCRONICO?
     xhr.open('POST', './BACKEND/nexo.php', true);
 
     //ESTABLEZCO EL ENCABEZADO DE LA PETICION
     xhr.setRequestHeader("enctype", "multipart/form-data");
+
+    //valido la opcion de si el boton es modificar o si es agregar
+    //Esta es una forma de hacerlo
+    //if((<HTMLInputElement> document.getElementById("btn")).value == "Modificar")
+
+    //Esta es otra forma de hacerlo
+    if(localStorage.getItem("modificar") == "true")
+    {
+        op="modificarFoto";
+        
+    }
+    else
+    {
+        op="subirFoto";    
+    }
+
+    console.log(op);
+
+    form.append('op',op);
+
 
     //ENVIO DE LA PETICION
     xhr.send(form);
@@ -72,6 +94,17 @@ function SubirFoto() : void {
     xhr.onreadystatechange = () => {
 
         if (xhr.readyState == 4 && xhr.status == 200) {
+
+            //vuelvo a cambiar el input a enviar en vez de modificar
+            (<HTMLInputElement> document.getElementById("btn")).value = "Enviar";
+            (<HTMLInputElement> document.getElementById("btn")).className="btn btn-success";
+           
+            //funcion que me limpia los campos una vez subida un empleado o modificado
+            LimpiarCampos();
+           
+           
+            //limpio el localStorage
+            localStorage.clear();
 
             //recupero el objeto de tipo JSON en formato cadena que nos devuelve nexo.php
             let retJSON = JSON.parse(xhr.responseText);
@@ -152,8 +185,28 @@ function Modificar(empleado:any)
   //hay que cambiar el "src" para que sepa donde buscar la foto 
   (<HTMLImageElement> document.getElementById("imgFoto")).src = path;
 
+  (<HTMLInputElement> document.getElementById("btn")).value ="Modificar";
+  //(<HTMLInputElement> document.getElementById("btn")).className="btn btn-warning";
+
+  localStorage.setItem("modificar","true");
 
 
 
    MostrarListado();
+}
+
+function LimpiarCampos()
+{
+    (<HTMLInputElement> document.getElementById("txtNombre")).value="";
+    (<HTMLInputElement> document.getElementById("txtApellido")).value="";
+    (<HTMLInputElement> document.getElementById("numSueldo")).value="";
+    (<HTMLInputElement> document.getElementById("fileFoto")).value="";
+
+    (<HTMLInputElement> document.getElementById("numLegajo")).value="";
+    (<HTMLInputElement> document.getElementById("numLegajo")).disabled=false;
+
+    (<HTMLImageElement> document.getElementById("imgFoto")).src = "./BACKEND/usr_default.jpg";
+    
+    
+
 }

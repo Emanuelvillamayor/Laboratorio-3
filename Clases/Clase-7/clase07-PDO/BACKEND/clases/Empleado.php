@@ -98,6 +98,38 @@ require_once "AccesoDatos.php";
     
      }
 
+     public static function ModificarArchivo($empleado)
+     {
+      $objetoDatos = AccesoDatos::DameUnObjetoAcceso();
+
+      //ejecuto la consulta de eliminar un usuario en el "legajo" especificado en la base de datos
+      $consulta =$objetoDatos->RetornarConsulta('UPDATE empleados SET nombre = :nombre, apellido = :apellido, sueldo = :sueldo, path_foto = :path_foto WHERE legajo = :legajoAUX' );
+
+      $consulta->bindValue(':nombre', $empleado->nombre, PDO::PARAM_STR);
+      $consulta->bindValue(':apellido', $empleado->apellido, PDO::PARAM_STR);
+      $consulta->bindValue(':sueldo', $empleado->sueldo, PDO::PARAM_INT);
+      $consulta->bindValue(':path_foto', $empleado->path_foto, PDO::PARAM_STR);
+
+      $consulta->bindValue(':legajoAUX', $empleado->legajo, PDO::PARAM_INT);
+
+      return $consulta->execute();
+
+     }
+
+     //Elimina una en archivo tenieno como referencia el legajo pasado por el empleado que se pasa por parametro
+     public static function EliminarFoto($empleado)
+     {
+        $arrayEmpleados = Empleado::TraerTodos();
+
+        foreach($arrayEmpleados as $emp)
+        {
+           if($emp->legajo == $empleado->legajo)
+           {
+              unlink($emp->path_foto);
+           }
+        }
+     }
+
  }
 
 ?>
