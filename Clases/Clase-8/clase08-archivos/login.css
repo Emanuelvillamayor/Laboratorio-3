@@ -1,0 +1,38 @@
+th{
+    background : blue;
+    color : white;
+    font-size: 20pt;
+}
+
+span{
+    font-style : italic;
+
+}
+
+table
+{
+    background :lime;
+    width: 25%;
+}
+
+input[type="button"]
+{
+    width: 100%;
+
+}
+input
+{
+    width: 100%;
+    font-size: 150%;
+    font-style: initial;
+}
+.Aceptar{
+    background : green;
+    color : white;
+}
+
+.Cancelar
+{
+    background : red;
+    color : white;
+}
