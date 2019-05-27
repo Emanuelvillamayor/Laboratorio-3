@@ -1,0 +1,38 @@
+table,th,tr,td{
+    border: 6px double rgb(4, 200, 184);
+}
+table{
+    width: 50%;
+}
+th{
+    padding: 4px 4px 4px 4px;
+    text-align: center;
+    color: rgb(11, 4, 71);
+    background-color: rgb(141, 17, 100);
+}
+tr{
+    background-color: rgb(60, 16, 133);
+}
+tr:hover{
+    background-color: rgb(20, 91, 133);
+}
+td{
+    color: rgb(244, 248, 4);
+    /*background-color: rgb(5, 75, 37);*/
+}
+td:hover{
+    color: rgb(117, 13, 13);
+    background-color: rgb(184, 152, 12);
+}
+#listado{
+    text-align: center;
+}
+.img-circle{
+    border: 2px solid rgb(5, 114, 29);
+}
+#spinner{
+    color: red;
+}
+.alert{
+    color: red;
+}

@@ -1,0 +1,32 @@
+                                              CLASE 8
+
+Agregamos pagina para hacer un logueo , generamos una 	que se llame login.php
+Tenga un textbox para que pueda agregar el legajo de usuario , la clave y el aceptar y el cancelar ,
+con el aceptar genero el submit del formulario , validamos si es usuario valido y hacemos que llegue a la pagina
+index.php o html.
+Mi form tiene que estar abarcando una tabla , la tabla debe tener su primer fila combinada con tantas columnas como
+columnas tenga mi form y un texto de encabezado que me qued ingreso , en la siguiente fila la etiqueta pra legajo
+en la seigueinte fila el input de tipo text para legajo ,en la otra fila el input de clave , en la ultima fila 
+el input de aceptar y cancelar.
+Mi tabla es de 2 columnas ya que tengo dos botones , la fila de clave va a ser un td con un colspan de 2 ,
+Los textos de legajo y clave van en un SPAN , el titulo va en un con las etiquetas <Th>
+
+Vamos a generar login.css para darle estetica al formulario :
+ TH (encabezado) -> le vamos  a definir "color de fondo = azul" , "texto =color claro" , "tamaño=20pt" +
+
+ Span -> "fuente=goticas" (tener cuidado con las fuentes ya que se van a aplicar si el usuario las tiene instaladas
+          por eso se suele indicar cual es la fuente que quiero pero despues agregarle mas fuentes tradicionales)
+            
+ table -> "color de fondo=lima" , "aligne = center" , "width=25" ,
+ 
+  input[type="button"] ->width = 100%
+
+ input -> "width =100%" , "text = 50%" "fuente:otra"
+
+
+
+Crear una BD con usuarios.
+
+Crear un backend usando api que me verifique todo y loguea Por GET (legajo/clave) - Retorna JSON que indica: 
+Exito (bool) objEmp (JSON)
+

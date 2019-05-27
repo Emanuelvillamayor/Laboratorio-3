@@ -1,0 +1,20 @@
+th{
+    background-color:blue;
+    color:navajowhite;
+    font-size: 20pt;
+}
+span{
+    font-style: italic;
+}
+table{
+    background: lime;
+    width: 25px;
+}
+input[type="button"]{
+    width: 100%;
+}
+input{
+    width: 100%;
+    font-size: 50%;
+    font-style: initial;
+}

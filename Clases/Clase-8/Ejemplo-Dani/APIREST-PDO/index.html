@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>APIREST FULL EMPLEADOS CON PDO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d" type="image/x-icon">
+<!-- ESTOS LINKS SON ESENCIALES -->
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="./node_modules/bootstrapvalidator/dist/css/bootstrapValidator.css"/>
+
+  <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./node_modules/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
+<!-- /FIN DE LINKS ESENCIALES -->
+<link rel="stylesheet" href="./node_modules/components-font-awesome/css/fontawesome.min.css"> <!-- FOR ICONS STYLE -->
+<script src="ejemplo.js"></script>
+
+</head>
+
+<body style="background-color:rgb(8, 26, 87)">
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-xs-8 col-md-6" >
+          <div class="container well bg-light login_cont" style="width:98%;margin-top:10%; padding: 0 1% 0 1%; background-color:rgba(186, 250, 166, 0.719)">
+              <h4 align="left" style="margin:0 -2% 0 0">APIREST FULL PDO - EMPLEADOS</h4>
+              <form id="altaForm" method="post" class="well form-horizontal" style="background-color:rgba(141, 252, 183, 0.781)">
+                
+                <div class="form-group">
+                  <div class="col-md-2 col-sm-3 col-xs-4 lbl"><label class="control-label">Apellido</label></div>
+
+                  <div class="col-md-10 col-sm-12 col-xs-12 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input name="apellido" id="apellido" placeholder="Apellido" class="form-control" type="text">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-2 col-sm-3 col-xs-4 lbl"><label class="control-label">Nombre</label></div>
+
+                  <div class="col-md-10 col-sm-12 col-xs-12 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input name="nombre" id="nombre" placeholder="Nombre" class="form-control" type="text">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-2 col-sm-3 col-xs-4 lbl"><label class="control-label">Legajo</label></div>
+
+                  <div class="col-md-10 col-sm-12 col-xs-12 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+                      <input name="legajo" id="legajo" placeholder="Legajo" class="form-control" type="number">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-2 col-sm-3 col-xs-4 lbl"><label class="control-label">Sueldo</label></div>
+
+                  <div class="col-md-10 col-sm-12 col-xs-12 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                      <input name="sueldo" id="sueldo" placeholder="Sueldo" class="form-control" type="number">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-2 col-sm-3 col-xs-4 lbl"><label class="control-label">Foto</label></div>
+
+                  <div class="col-md-10 col-sm-12 col-xs-12 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-camera"></i></span>
+                      <input name="foto" id="foto" placeholder="Foto" class="form-control" type="file">
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-xs-12 col-md-12" >&nbsp</div>
+                  <div>
+                    <div class="col-sm-6 col-xs-12 col-md-6" ><button type="submit" id="btnIM" value="Insertar" class="btn btn-success btn-block">Enviar</button></div>
+                    <div class="col-sm-6 col-xs-12 col-md-6" ><button type="reset" class="btn btn-warning btn-block" id="btnLimpiar">Limpiar</button></div>
+                  </div>
+                </div>
+                
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-sm-6 col-xs-4 col-md-6" >
+        <div class="container well bg-light login_cont" style="width:98%;margin-top:10%; padding: 0 1% 0 1%; background-color:rgba(80, 194, 246, 0.719); text-align: center">
+          <img align="center" id="imgFoto" src="./BACKEND/usr_default.jpg" style="max-width:60%; max-height:60%" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="listado" align="center">
+    <!-- Listado de empleados -->
+  </div><br><br>
+
+</body>
+
+</html>

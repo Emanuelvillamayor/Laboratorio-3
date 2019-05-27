@@ -1,0 +1,9 @@
+--------------- MANUAL DEL USO DE LA API EMPLEADOS ---------------
+*** Breve introducción ***
+Todas las consultas al API del index.php se pueden hacer tando desde Postman, un Frontend, como directamente
+en el index.php, salvo las consultas que no son GET, ya que van a necesitar el lado Frontend.
+
+Las consultas además de los resultados retornan un estado y si el mismo NO ES 200 no se ejecutan sus middlewares.
+
+1- Para traer el listado de empleados: empleado/ --> USAR GET . La / es opcional.
+2- 
