@@ -1,30 +1,63 @@
-window.onload = function(){
+/// <reference path="./node_modules/@types/jquery/index.d.ts"/>
 
-    MostrarListado();
+$(document).ready(function(){
 
-}
+    $("#btnAceptar").mouseover(function(){
 
-function MostrarListado(){
+        $("#btnAceptar").addClass("Cancelar");
 
-let xhr : XMLHttpRequest = new XMLHttpRequest();
+    });
 
-let form : FormData = new FormData();
+    $("#btnAceptar").mouseout(function(){
+        
+        $("#btnAceptar").removeClass("Cancelar");
+        
+    });
+/*
+    $("#btn01").click(function(){
 
-form.append('op', "mostrarListado");
+        if($("#p02").attr("class") == "negrita")
+            $("#p02").removeClass("negrita");
+        else
+            $("#p02").addClass("negrita");
+        
+    });    */
+});
+
+$("#btnAceptar").click(function()
+{
+    let pagina : string = "./BACKEND/index.php";
+    let legajo : string =(<HTMLInputElement> document.getElementById("txtLegajo")).value;
+    let clave : string =(<HTMLInputElement> document.getElementById("txtClave")).value;
+
+    let formData : FormData = new FormData();
+    formData.append("caso", "http://localhost/clase08-archivos/BACKEND/emp/");
+    formData.append("legajo",legajo);
+    formData.append("clave",clave);
+
+    $.ajax({
+        type: 'POST',
+        url: pagina,
+        dataType: "json",
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: formData,
+        async: true
+    })
+    .done(function (objJson:any) {
 
 
-xhr.open('POST', './BACKEND/nexo.php', true);
+        if(!objJson.Exito){
+            console.clear();
+            console.log(objJson.Mensaje);
+            return;
+        }
 
-xhr.setRequestHeader("enctype", "multipart/form-data");
 
-xhr.send(form);
-
-xhr.onreadystatechange = () => {
-
-    if (xhr.readyState == 4 && xhr.status == 200) {
-        //la tabla que recuperamos desde nexo.php la mostramos dentro de el "div"
-       (<HTMLInputElement>document.getElementById("div")).innerHTML=xhr.responseText;
-    }
-};
-
-}
+    })
+    .fail(function (jqXHR:any, textStatus:any, errorThrown:any) {
+        alert(jqXHR.responseText + "\n" + textStatus + "\n" + errorThrown);
+    }); 
+    
+});  

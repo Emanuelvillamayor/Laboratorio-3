@@ -26,141 +26,8 @@ desarrollo para obtener información sobre los errores
 //*********************************************************************************************//
 $app = new \Slim\App(["settings" => $config]);
 
-//*********************************************************************************************//
-//CONFIGURO LOS VERBOS GET, POST, PUT Y DELETE
-//*********************************************************************************************//
-$app->get('[/]', function (Request $request, Response $response) {    
-    $response->getBody()->write("GET => Bienvenido!!! a SlimFramework");
-    return $response;
 
-});
 
-$app->post('[/]', function (Request $request, Response $response) {   
-    $response->getBody()->write("POST => Bienvenido!!! a SlimFramework");
-    return $response;
-
-});
-
-$app->put('[/]', function (Request $request, Response $response) {  
-    $response->getBody()->write("PUT => Bienvenido!!! a SlimFramework");
-    return $response;
-
-});
-
-$app->delete('[/]', function (Request $request, Response $response) {  
-    $response->getBody()->write("DELETE => Bienvenido!!! a SlimFramework");
-    return $response;
-
-});
-
-//*********************************************************************************************//
-//RUTEOS
-//*********************************************************************************************//
-$app->get('/ruteo/', function (Request $request, Response $response) {    
-    $response->getBody()->write("Ruteo, sin params");
-    return $response;
-
-});
-
-$app->get('/ruteo/{param}', function (Request $request, Response $response) {    
-    $response->getBody()->write("Ruteo, con params");
-    return $response;
-
-});
-
-$app->get('/ruteoOpcional[/]', function (Request $request, Response $response) {    
-    $response->getBody()->write("Ruteo, sin params y / opcional");
-    return $response;
-
-});
-
-$app->get('/ruteoOpcional/{param}', function (Request $request, Response $response) {    
-    $response->getBody()->write("Ruteo, con params opcional");
-    return $response;
-
-});
-
-//*********************************************************************************************//
-//ATENDER TODOS LOS VERBOS DE HTTP
-//*********************************************************************************************//
-$app->any('/cualquiera/[{id}]', function ($request, $response, $args) {
-    
-    var_dump($request->getMethod());
-    $id=$args['id'];
-    $response->getBody()->write("Cualquier verbo de HTTP. Parametro: {$id} - ");
-    return $response;
-});
-
-//*********************************************************************************************//
-//ATENDER ALGUNOS VERBOS DE HTTP
-//*********************************************************************************************//
-$app->map(['GET', 'POST'], '/mapeado', function ($request, $response, $args) {
-
-      var_dump($request->getMethod());
-     $response->getBody()->write("Solo POST y GET - ");
-});
-
-//*********************************************************************************************//
-//AGRUPACION DE RUTAS
-//*********************************************************************************************//
-$app->group('/saludo', function () {
-
-    $this->get('/', function ($request, $response, $args) {
-        $response->getBody()->write("HOLA, Bienvenido a la apirest... ingresá tu nombre");
-    });
-
-    $this->get('/{nombre}', function ($request, $response, $args) {
-        $nombre=$args['nombre'];
-        $response->getBody()->write("HOLA, Bienvenido <h1>$nombre</h1> a la apirest");
-    });
- 
-     $this->post('/', function ($request, $response, $args) {      
-        $response->getBody()->write("HOLA, Bienvenido a la apirest por post");
-    });
-     
-});
-
-//*********************************************************************************************//
-//AGRUPACION DE RUTAS Y MAPEO
-//*********************************************************************************************//
-$app->group('/usuario/{id:[0-9]+}', function () {
-
-    $this->map(['POST', 'DELETE'], '', function ($request, $response, $args) {
-        $response->getBody()->write("Accedo al usuario por ID (con POST o DELETE) ");
-    });
-
-    $this->get('/nombre', function ($request, $response, $args) {
-        $response->getBody()->write("Accedo al usuario por ID y retorno el nombre (con GET) ");
-    });
-
-});
-
-//*********************************************************************************************//
-//PARAMETROS 
-//*********************************************************************************************//
-$app->get('/datos/', function (Request $request, Response $response) {     
-    $datos = array('nombre' => 'rogelio','apellido' => 'agua', 'edad' => 40);
-    $newResponse = $response->withJson($datos, 200);  
-    return $newResponse;
-});
-
-$app->post('/datos/', function (Request $request, Response $response) {    
-    $ArrayDeParametros = $request->getParsedBody();
-    //var_dump($ArrayDeParametros);
-    $objeto= new stdclass();
-    $objeto->nombre=$ArrayDeParametros['nombre'];
-    $objeto->apellido=$ArrayDeParametros['apellido'];
-    $objeto->edad=$ArrayDeParametros['edad'];
-    $newResponse = $response->withJson($objeto, 200);  
-    return $newResponse;
-
-});
-
-$app->put('/datos/', function (Request $request, Response $response) {    
-    $ArrayDeParametros = $request->getParsedBody();
-    $obj = json_decode(($ArrayDeParametros["cadenaJson"]));
-    var_dump($obj);
-});
 
 
 
@@ -212,11 +79,16 @@ $app->group('/empleado', function () {
 
 $app->group('/emp', function () 
 {   
-    $this->get('/{legajo}/{clave}', \emp::class . ':VerificarEmp');
+    //si utilizo solo "emp" estoy indicando una instancia vacia por lo tanto mis atributos se deben inicializar por default o de lo contrario crear una instancia
+    //aqui dentro y reemplazarla en "emp"
+    $this->get('/{legajo}/{clave}', \emp::class . ':VerificarEmpGet1');
+    $this->get('/', \emp::class . ':VerificarEmpGet2');
 
-    $this->get('/', function ($request, $response, $args) {
-        $response->getBody()->write("HOLA, Bienvenido a la apirest... ingresá tu nombre");
-    });
+    
+    
+
+
+
 });
 
 

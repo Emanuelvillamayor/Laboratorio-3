@@ -26,6 +26,8 @@ input
     font-size: 150%;
     font-style: initial;
 }
+
+/*Se utiliza como "clase generica" y se va a implementar en el input que yo quiera elegir*/
 .Aceptar{
     background : green;
     color : white;
