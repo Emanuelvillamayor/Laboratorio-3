@@ -48,7 +48,7 @@
 <tr>
     <td>
       <!--En "class" voy a llamar a un estilo especifico de css-->
-      <input type="button" id="btnAceptar" value="Enviar" class ="Aceptar">
+      <input type="button" id="btnAceptar" value="Enviar" class ="Aceptar" onclick="Login()">
     </td>
     <td>
       <input type="button" value="Cancelar" class ="Cancelar">
