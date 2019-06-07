@@ -1,0 +1,22 @@
+                                                     CLASE 9
+1-Agrego una clase en el escritorio:
+2-Voy a la pagina de bootstrap y descargo los CDN
+3-Estamos descargando de boostrap 
+4-Vamos a dentro de nuestro container , agregar un div y le ponemos la clase row 
+  -Dentro de ese div vamos a poner una imagen 
+  -Creamos otro div  con clase row y otra imagen 
+  -Dentro del row generamos un div nuevo que me indique las columnas que va a tener esa fila
+  -le aplico las clases "img-rounded" , "img-circle" , "img-thumbnail" para aplicarle estilos a la imagen
+5-Al ejercicio de empleado de login , le vamos a aplicar bootstrap:
+  -Al formulario le vamos a poner distintas clases de boostrap y a los elemntos lo mismo
+  -Al boton de login le agregamos un icono , en limpiar le damos al icono del tacho de basura
+  -Este formulario lo ponemos dentro de una fila en el contenedor principal pero vamos a dejar 4 columnas
+   vacias a derecha , 4 a izquierda y en el  medio el formulario
+   Los elementos van en un form-group
+   Utilizamos rows y cols para el formato del formulario:
+   1-"Ingreso" va a ser una fila completa dentro de mi formulario y le ponemos un "col=12"
+   2-"Legajo" tipo text col de 4 y el input con un col de 8
+6-Hacer formulario de alta de un nuevo usuario
+
+
+Agregar al login un button para que me pueda registrar y que pueda ingresar los datos en una ventana modal
