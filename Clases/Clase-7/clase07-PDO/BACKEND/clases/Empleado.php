@@ -6,26 +6,28 @@ require_once "AccesoDatos.php";
 
      public $apellido;
      public $nombre;
+     public $clave;
      public $legajo;
      public $sueldo;
      public $path_foto;
 
      #Constructor
 
-     function __construct($legajo,$apellido,$nombre,$sueldo,$path)
+     function __construct($legajo=null,$apellido=null,$nombre=null,$sueldo=null,$clave=null,$path=null)
      {
          $this->apellido=$apellido;
          $this->nombre=$nombre;
          $this->legajo=$legajo;
          $this->sueldo=$sueldo;
          $this->path_foto=$path;
+         $this->clave=$clave;
      }
 
      #Metodo Instancia
 
      public function ToString()
      {   
-        return $this->apellido . "-" . $this->nombre."-".$this->legajo . "-" . $this->sueldo . "-" . $this->path_foto;
+        return $this->apellido . "-" . $this->nombre."-".$this->legajo . "-" . $this->sueldo . "-" .$this->clave."-". $this->path_foto;
      }
 
      public static function TraerTodos()
@@ -41,7 +43,7 @@ require_once "AccesoDatos.php";
         
         while($fila = $consulta->fetch())
         {
-          $empleado= new Empleado($fila[1],$fila[3],$fila[2],$fila[4],$fila[5]);
+          $empleado= new Empleado($fila[1],$fila[3],$fila[2],$fila[4],$fila[5],$fila[6]);
           array_push($empleados,$empleado);
         }
 
@@ -58,13 +60,14 @@ require_once "AccesoDatos.php";
 
         $objetoDatos = AccesoDatos::DameUnObjetoAcceso();
 
-        $consulta =$objetoDatos->RetornarConsulta("INSERT INTO empleados (legajo, nombre, apellido, sueldo, path_foto)"
-                                                        . "VALUES(:legajo, :nombre, :apellido, :sueldo, :path_foto)"); 
+        $consulta =$objetoDatos->RetornarConsulta("INSERT INTO empleados (legajo, nombre, apellido, sueldo, clave, path_foto)"
+                                                        . "VALUES(:legajo, :nombre, :apellido, :sueldo, :clave, :path_foto)"); 
             
         $consulta->bindValue(':legajo', $empleado->legajo, PDO::PARAM_INT);
         $consulta->bindValue(':nombre', $empleado->nombre, PDO::PARAM_STR);
         $consulta->bindValue(':apellido', $empleado->apellido, PDO::PARAM_STR);
         $consulta->bindValue(':sueldo', $empleado->sueldo, PDO::PARAM_INT);
+        $consulta->bindValue(':clave', $empleado->clave, PDO::PARAM_STR);
         $consulta->bindValue(':path_foto', $empleado->path_foto, PDO::PARAM_STR);
 
         return $consulta->execute();
@@ -103,11 +106,12 @@ require_once "AccesoDatos.php";
       $objetoDatos = AccesoDatos::DameUnObjetoAcceso();
 
       //ejecuto la consulta de eliminar un usuario en el "legajo" especificado en la base de datos
-      $consulta =$objetoDatos->RetornarConsulta('UPDATE empleados SET nombre = :nombre, apellido = :apellido, sueldo = :sueldo, path_foto = :path_foto WHERE legajo = :legajoAUX' );
+      $consulta =$objetoDatos->RetornarConsulta('UPDATE empleados SET nombre = :nombre, apellido = :apellido, sueldo = :sueldo, clave = :clave, path_foto = :path_foto WHERE legajo = :legajoAUX' );
 
       $consulta->bindValue(':nombre', $empleado->nombre, PDO::PARAM_STR);
       $consulta->bindValue(':apellido', $empleado->apellido, PDO::PARAM_STR);
       $consulta->bindValue(':sueldo', $empleado->sueldo, PDO::PARAM_INT);
+      $consulta->bindValue(':clave', $empleado->clave, PDO::PARAM_STR);
       $consulta->bindValue(':path_foto', $empleado->path_foto, PDO::PARAM_STR);
 
       $consulta->bindValue(':legajoAUX', $empleado->legajo, PDO::PARAM_INT);

@@ -8,10 +8,13 @@
     <link type="text/css" rel="stylesheet" href="login.css" />
 
     <!-- AGREGO LA LIBRERIA DE JQUERY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
         
     <!-- AGREGO FUNCIONES PROPIAS CON USO DE JQUERY -->
-    <script type="text/javascript" src="emp.js"></script>
+    <script type="text/javascript" src="login.js"></script>
 
     <title>Clase 8</title>
 </head>

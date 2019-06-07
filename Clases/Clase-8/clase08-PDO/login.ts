@@ -33,21 +33,38 @@ function Login()
    // let legajo : string =(<HTMLInputElement> document.getElementById("txtLegajo")).value;
     //let clave : string =(<HTMLInputElement> document.getElementById("txtClave")).value;
 
+    let xhttp : XMLHttpRequest = new XMLHttpRequest();
     let legajo=$("#txtLegajo").val();
     let clave=$("#txtClave").val();
 
-    let pagina : string = "./BACKEND/index.php/emp/"+legajo+"/"+clave;
+    let pagina : string = "./BACKEND/emp/"+legajo+"/"+clave;
 
+   xhttp.open("GET", "BACKEND/emp/"+legajo+"/"+clave, true);
 
-    /*
-    let formData : FormData = new FormData();
-    formData.append("caso", "http://localhost/clase08-archivos/BACKEND/emp/");
-   // formData.append("legajo",legajo);
-    //formData.append("clave",clave);*/
+   //ENVIO DE LA PETICION
+   xhttp.send();
+
+   //FUNCION CALLBACK
+   xhttp.onreadystatechange = () => 
+   {
+       if (xhttp.readyState == 4 && xhttp.status == 200) {
+        let retJSON = JSON.parse(xhttp.responseText);
+        if(!retJSON.Exito)
+        {
+        alert("Error!,Usuario erroneo");
+       }
+       else
+       {
+        location.assign("./Ej8.html"); //en caso de exito
+       }
+    }
+   }
+
+       /*
 
     $.ajax({
         type: 'GET',
-        url: pagina,
+        url: 'BACKEND/index.php/emp/'+legajo+'/'+clave,
         dataType: "json",
         cache: false,
         contentType: false,
@@ -61,7 +78,7 @@ function Login()
         if(!objJson.Exito){
             console.clear();
             console.log(objJson.Mensaje);
-            location.assign("./login.php"); //en caso de exito
+           // location.assign("./login.php"); //en caso de exito
             return;
         }
 
@@ -70,5 +87,6 @@ function Login()
     .fail(function (jqXHR:any, textStatus:any, errorThrown:any) {
         alert(jqXHR.responseText + "\n" + textStatus + "\n" + errorThrown);
     }); 
+    */
 }
     
