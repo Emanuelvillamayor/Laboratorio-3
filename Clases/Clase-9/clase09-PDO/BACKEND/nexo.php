@@ -123,8 +123,12 @@ switch ($op) {
         if(Empleado::EliminarArchivo($empleado))
         {                   
           //elimino la foto del archivo de texto
-          unlink($objEmpleado->path_foto);
+          if(file_exists($objEmpleado->path_foto))
+          {
+            unlink($objEmpleado->path_foto);      
+          }
           echo "Empleado eliminado con exito";
+
         }
         else
         {

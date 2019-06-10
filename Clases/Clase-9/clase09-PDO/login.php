@@ -16,7 +16,7 @@
     <!-- AGREGO FUNCIONES PROPIAS CON USO DE JQUERY -->
     <script type="text/javascript" src="login.js"></script>
 
-    <title>Clase 8</title>
+    <title>Clase 9</title>
 </head>
 <body>
 <form>
