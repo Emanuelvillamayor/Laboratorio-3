@@ -1,0 +1,21 @@
+{
+    "usuarios": [{
+            "correo": "adsouad@gmail.com",
+            "clave": "123",
+            "nombre": "Juan",
+            "apellido": "Masoe",
+            "legajo": 12345,
+            "perfil": "Aaiouadsd",
+            "foto": "exdi.jpg"
+        },
+        {
+            "correo": "qweqwieasd@hotmail.com",
+            "clave": "123",
+            "nombre": "Carlos",
+            "apellido": "Pena",
+            "legajo": 675,
+            "perfil": "wqewqeg",
+            "foto": "qweqds.jpg"
+        }
+    ]
+}

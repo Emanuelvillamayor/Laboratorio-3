@@ -1,0 +1,10 @@
+{
+    "productos": [{
+            "marca": "Gucci",
+            "color": "Rojo",
+            "talle": "XXL",
+            "precio": 2.24,
+            "id": 12345
+        }
+    ]
+}

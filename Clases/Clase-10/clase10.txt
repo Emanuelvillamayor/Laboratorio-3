@@ -13,7 +13,7 @@ Gestor de aplicaciones (bower): vamos a la consola y vamos a checkear
     bower -v
 
    Para instalarlo hacemos :
- 
+ /*solo si no esta instalado*/
    npm install -g bower
 
 
